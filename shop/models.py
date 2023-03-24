@@ -30,6 +30,8 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
     color_product = models.CharField(max_length=200,blank=True,null=True)
     color = models.CharField(max_length=200,blank=True,null=True)
+    size = models.CharField(max_length=200,blank=True,null=True)
+    gender = models.CharField(max_length=200,blank=True,null=True)
       
 
     class Meta:
