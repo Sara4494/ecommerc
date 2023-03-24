@@ -18,7 +18,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    size = (
+    siize = (
         ('xl','xl'),
         ('l','l'),
         ('2xl','2xl'),
@@ -28,6 +28,10 @@ class Product(models.Model):
         ('m','m'),
         ('xxl','xxl')
      
+    )
+    geender = (
+        ('انثي','انثي'),
+        ('ذكر','ذكر'),
     )
     category = models.ForeignKey(Category, related_name='products',
                                  on_delete=models.CASCADE)
@@ -41,8 +45,8 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
     color_product = models.CharField(max_length=200,blank=True,null=True)
     color = models.CharField(max_length=200,blank=True,null=True)
-    size = models.CharField( choices=size,max_length=200,blank=True,null=True)
-    gender = models.CharField(max_length=200,blank=True,null=True)
+    size = models.CharField( choices=siize,max_length=200,blank=True,null=True)
+    gender = models.CharField( choices=geender,max_length=200,blank=True,null=True)
       
 
     class Meta:
